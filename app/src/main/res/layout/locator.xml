@@ -65,6 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseA"
                     android:text="@string/choose_A" />
 
                 <Button
@@ -72,6 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseD"
                     android:text="@string/choose_D" />
 
                 <Button
@@ -79,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseG"
                     android:text="@string/choose_G" />
 
                 <Button
@@ -86,6 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseJ"
                     android:text="@string/choose_J" />
             </LinearLayout>
 
@@ -100,6 +104,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseB"
                     android:text="@string/choose_B" />
 
                 <Button
@@ -107,6 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseE"
                     android:text="@string/choose_E" />
 
                 <Button
@@ -114,6 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseH"
                     android:text="@string/choose_H" />
 
                 <Button
@@ -121,6 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseK"
                     android:text="@string/choose_K" />
             </LinearLayout>
 
@@ -135,6 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseC"
                     android:text="@string/choose_C" />
 
                 <Button
@@ -142,6 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseF"
                     android:text="@string/choose_F" />
 
                 <Button
@@ -149,6 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseI"
                     android:text="@string/choose_I" />
 
                 <Button
@@ -156,6 +167,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onChooseL"
                     android:text="@string/choose_L" />
             </LinearLayout>
         </LinearLayout>

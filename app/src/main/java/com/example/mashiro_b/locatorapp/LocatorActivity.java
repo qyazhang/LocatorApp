@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -18,8 +19,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -201,10 +204,85 @@ public class LocatorActivity extends AppCompatActivity implements
         }
     }
 
-    public void onChooseA (GoogleMap map) {
+    private void createMaker (final char ID) {
+        try {
+            if (mLocationPermissionGranted) {
+                Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Location> task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                            mLastKnownLocation = task.getResult();
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                    new LatLng(mLastKnownLocation.getLatitude(),
+                                            mLastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                            mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(mLastKnownLocation.getLatitude(),
+                                            mLastKnownLocation.getLongitude()))
+                                    .icon(BitmapDescriptorFactory.defaultMarker(360/12*(ID-'A'))));
 
-        //mFusedLocationProviderClient.getLastLocation();
-        //map.addMarker(new )
+                        } else {
+                            Log.d(TAG, "Current location is null. Using defaults.");
+                            Log.e(TAG, "Exception: %s", task.getException());
+                            mMap.moveCamera(CameraUpdateFactory
+                                    .newLatLngZoom(mDefaultLocation, DEFAULT_ZOOM));
+                            mMap.getUiSettings().setMyLocationButtonEnabled(false);
+                        }
+                    }
+                });
+            }
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
+    }
+
+    public void onChooseA (View view) {
+        createMaker('A');
+    }
+
+    public void onChooseB (View view) {
+        createMaker('B');
+    }
+
+    public void onChooseC (View view) {
+        createMaker('C');
+    }
+
+    public void onChooseD (View view) {
+        createMaker('D');
+    }
+
+    public void onChooseE (View view) {
+        createMaker('E');
+    }
+
+    public void onChooseF (View view) {
+        createMaker('F');
+    }
+
+    public void onChooseG (View view) {
+        createMaker('G');
+    }
+
+    public void onChooseH (View view) {
+        createMaker('H');
+    }
+
+    public void onChooseI (View view) {
+        createMaker('I');
+    }
+
+    public void onChooseJ (View view) {
+        createMaker('J');
+    }
+
+    public void onChooseK (View view) {
+        createMaker('K');
+    }
+
+    public void onChooseL (View view) {
+        createMaker('L');
     }
 
 }
