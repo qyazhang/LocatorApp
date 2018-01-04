@@ -11,7 +11,7 @@ public final class MenuDetailsList {
 
     public static final MenuDetails[] MENUS = {
             new MenuDetails(R.string.start_locator_label, R.string.start_locator_description, LocatorActivity.class),
-            //new MenuDetails(R.string.setting_label, R.string.setting_description, SettingsActivity.class),
+            new MenuDetails(R.string.setting_label, R.string.setting_description, SettingsActivity.class),
     };
 
 }

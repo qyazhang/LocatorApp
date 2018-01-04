@@ -36,6 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="false"
                     android:text="@string/start_locator_button" />
 
                 <Button
@@ -43,14 +44,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="onCancelLastStep"
                     android:text="@string/cancel" />
 
-                <Button
-                    android:id="@+id/back_location"
+                <Spinner
+                    android:id="@+id/select_my_ID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/back_location" />
+                    android:entries="@array/my_ID"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
