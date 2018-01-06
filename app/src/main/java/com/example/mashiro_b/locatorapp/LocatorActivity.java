@@ -38,7 +38,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -478,7 +477,7 @@ public class LocatorActivity extends AppCompatActivity implements
         }
     }
 
-    protected void quitSaveDialog(final int type) {
+    private void quitSaveDialog(final int type) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure to SAVE?");
         builder.setTitle("SAVE");
@@ -499,5 +498,7 @@ public class LocatorActivity extends AppCompatActivity implements
         });
         builder.create().show();
     }
+
+
 
 }
