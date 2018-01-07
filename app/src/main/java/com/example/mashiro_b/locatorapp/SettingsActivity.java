@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -25,12 +26,16 @@ public class SettingsActivity extends AppCompatActivity {
 
     private static final String TAG = SettingsActivity.class.getName();
 
-    private static String uploadUrl = "http://133.18.171.238:3000/upload";
+    //private static String uploadUrl = "http://133.18.171.238:3000/upload";
+    private static String uploadUrl = "192.168.0.1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        EditText input_server_address = (EditText)findViewById(R.id.server_address);
+        input_server_address.setText(uploadUrl);
     }
 
     public void onDeleteLocalData(View view) {
@@ -108,7 +113,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         RequestParams params = new RequestParams();
 
-        params.put("location_data", path);
+        params.put("location_data", path, "text/csv");
         System.out.println(params);
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -135,6 +140,15 @@ public class SettingsActivity extends AppCompatActivity {
         for (int i=0;i<allData.length;i++) {
             upLoadByPost( allData[i] );
         }
+    }
+
+    public void onOKAddress(View view) {
+
+        EditText input_server_address = (EditText)findViewById(R.id.server_address);
+        String edittextString = input_server_address.getText().toString();
+        uploadUrl = edittextString;
+        input_server_address.setText(uploadUrl);
+
     }
 
 }

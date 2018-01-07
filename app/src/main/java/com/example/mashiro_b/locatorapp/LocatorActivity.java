@@ -38,15 +38,24 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import static android.os.SystemClock.sleep;
+import static cz.msebera.android.httpclient.HttpHeaders.USER_AGENT;
 
 /**
  * This shows how to change the camera position for the map.
@@ -84,6 +93,8 @@ public class LocatorActivity extends AppCompatActivity implements
     private static Boolean mIsChecked = false;
 
     private static String myID = "A";
+
+    private static String uploadUrl = "http://133.18.171.238:3000/upload";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -324,13 +335,13 @@ public class LocatorActivity extends AppCompatActivity implements
         }
     }
 
-    public void onChooseA (View view) {
+    public void onChooseA (View view) throws IOException {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
             createMaker('A');
         }
     }
 
-    public void onChooseB (View view) {
+    public void onChooseB (View view) throws IOException {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
             createMaker('B');
         }
@@ -498,7 +509,5 @@ public class LocatorActivity extends AppCompatActivity implements
         });
         builder.create().show();
     }
-
-
 
 }

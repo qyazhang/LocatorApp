@@ -33,6 +33,7 @@
     <string name="enter_server_address">Please enter your uploading server address</string>
     <string name="Upload">Upload</string>
     <string name="Detele_Local_Data">Delete Local Data</string>
+    <string name="server_address">server address</string>
 
     <!-- Strings related to Settings -->
 
