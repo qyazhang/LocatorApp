@@ -297,7 +297,7 @@ public class LocatorActivity extends AppCompatActivity implements
         }
     }
 
-    private void createMaker (final char ID) {
+    private void createMarker (final char ID) {
         try {
             if (mLocationPermissionGranted) {
                 Task<Location> locationResult = mFusedLocationProviderClient.getLastLocation();
@@ -337,73 +337,73 @@ public class LocatorActivity extends AppCompatActivity implements
 
     public void onChooseA (View view) throws IOException {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('A');
+            createMarker('A');
         }
     }
 
     public void onChooseB (View view) throws IOException {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('B');
+            createMarker('B');
         }
     }
 
     public void onChooseC (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('C');
+            createMarker('C');
         }
     }
 
     public void onChooseD (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('D');
+            createMarker('D');
         }
     }
 
     public void onChooseE (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('E');
+            createMarker('E');
         }
     }
 
     public void onChooseF (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('F');
+            createMarker('F');
         }
     }
 
     public void onChooseG (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('G');
+            createMarker('G');
         }
     }
 
     public void onChooseH (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('H');
+            createMarker('H');
         }
     }
 
     public void onChooseI (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('I');
+            createMarker('I');
         }
     }
 
     public void onChooseJ (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('J');
+            createMarker('J');
         }
     }
 
     public void onChooseK (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('K');
+            createMarker('K');
         }
     }
 
     public void onChooseL (View view) {
         if (CAN_SET_MAKER_RECORD_LOCATION) {
-            createMaker('L');
+            createMarker('L');
         }
     }
 
@@ -440,6 +440,7 @@ public class LocatorActivity extends AppCompatActivity implements
         mStringBuilder.append("Latitude");
         mStringBuilder.append(mComma);
         mStringBuilder.append("Longtitude");
+        mStringBuilder.append(mComma);
 
     }
 

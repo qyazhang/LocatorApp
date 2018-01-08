@@ -92,28 +92,11 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    private String parseFile(File file) throws IOException {
-        StringBuffer sb= new StringBuffer("");
-
-        FileReader reader = new FileReader(file.getPath());
-
-        BufferedReader br = new BufferedReader(reader);
-
-        String str = null;
-
-        while((str = br.readLine()) != null) {
-
-            sb.append(str+"/n");
-
-        }
-        return sb.toString();
-    }
-
-    private void upLoadByPost(File path) throws IOException {
+    private void upLoadByPost(File file) throws IOException {
 
         RequestParams params = new RequestParams();
 
-        params.put("location_data", path, "text/csv");
+        params.put("location_data", file, "text/csv");
         System.out.println(params);
 
         AsyncHttpClient client = new AsyncHttpClient();
@@ -122,7 +105,6 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 Toast.makeText(SettingsActivity.this, "Upload Success!", Toast.LENGTH_LONG).show();
-
             }
             @Override
             public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {

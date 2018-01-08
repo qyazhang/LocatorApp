@@ -27,8 +27,8 @@
     <string name="choose_F">F</string>
     <string name="choose_I">I</string>
     <string name="choose_L">L</string>
-    <string name="title_activity_settings">Settings</string>
-    <string name="setting_label">setting</string>
+    <!--<string name="title_activity_settings">Settings</string>-->
+    <string name="setting_label">Settings</string>
     <string name="setting_description">setting for the uploading server address</string>
     <string name="enter_server_address">Please enter your uploading server address</string>
     <string name="Upload">Upload</string>
